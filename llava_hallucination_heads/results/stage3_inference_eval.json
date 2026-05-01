@@ -1,0 +1,73 @@
+{
+  "config": {
+    "theta": 0.08,
+    "alpha": 8.0,
+    "max_new_tokens": 80,
+    "eval_n": 40,
+    "n_risky_heads": 32
+  },
+  "baseline_chair": {
+    "CHAIRs": 0.125,
+    "CHAIRi": 0.049999999999999996,
+    "n": 40,
+    "examples": [
+      {
+        "img_id": 183973,
+        "caption": "A baseball player is swinging a bat at a ball.",
+        "hall_words": []
+      },
+      {
+        "img_id": 431479,
+        "caption": "A store window with mannequins and umbrellas on display.",
+        "hall_words": []
+      },
+      {
+        "img_id": 220638,
+        "caption": "A young boy is eating a bowl of cereal.",
+        "hall_words": []
+      },
+      {
+        "img_id": 466766,
+        "caption": "A group of people are standing around a table with wine bottles and glasses.",
+        "hall_words": []
+      },
+      {
+        "img_id": 456261,
+        "caption": "A person is laying on a bed with a blanket on.",
+        "hall_words": []
+      }
+    ]
+  },
+  "inference_control_chair": {
+    "CHAIRs": 0.075,
+    "CHAIRi": 0.03333333333333333,
+    "n": 40,
+    "examples": [
+      {
+        "img_id": 183973,
+        "caption": "A baseball player is swinging a bat at a ball.",
+        "hall_words": []
+      },
+      {
+        "img_id": 431479,
+        "caption": "A store window with a mannequin and various umbrellas.",
+        "hall_words": []
+      },
+      {
+        "img_id": 220638,
+        "caption": "A young boy is eating a bowl of cereal.",
+        "hall_words": []
+      },
+      {
+        "img_id": 466766,
+        "caption": "A group of people are standing around a bar, drinking and socializing.",
+        "hall_words": []
+      },
+      {
+        "img_id": 456261,
+        "caption": "A person is laying on a bed with a blanket on.",
+        "hall_words": []
+      }
+    ]
+  }
+}

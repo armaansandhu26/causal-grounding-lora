@@ -1,0 +1,74 @@
+{
+  "config": {
+    "theta": 0.08,
+    "alpha": 8.0,
+    "max_new_tokens": 80,
+    "eval_n": 40,
+    "model_id": "llava-hf/llava-1.5-7b-hf",
+    "lora_adapter_dir": "/content/drive/MyDrive/llava_hallucination_heads/results/stage2_lora_adapter"
+  },
+  "lora_only_chair": {
+    "CHAIRs": 0.15,
+    "CHAIRi": 0.04553571428571428,
+    "n": 40,
+    "examples": [
+      {
+        "img_id": 183973,
+        "caption": "A baseball player swinging a bat.A catcher and umpire.A baseball player swinging a bat.A catcher and umpire.A baseball player swinging a bat.A catcher and umpire.A baseball player swinging a bat.A catcher and umpire.A baseball player swinging a bat.A catcher and umpire.",
+        "hall_words": []
+      },
+      {
+        "img_id": 431479,
+        "caption": "A umbrella in a store.A plant.A umbrella.A plant.A umbrella.A plant.A umbrella.A plant.A umbrella.A plant.A umbrella.A plant.A umbrella.A plant.A umbrella.A plant.A umbrella.A plant.A umbrella.",
+        "hall_words": []
+      },
+      {
+        "img_id": 220638,
+        "caption": "A kid eating something.A person with a cupcake.A kid eating something.A person with a cupcake.A kid eating something.A person with a cupcake.A kid eating something.A personA kid eating something.A personA kid eating something.A personA kid eating something.A personA kid eating something.",
+        "hall_words": []
+      },
+      {
+        "img_id": 466766,
+        "caption": "A woman holding a menu.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Air",
+        "hall_words": []
+      },
+      {
+        "img_id": 456261,
+        "caption": "A person laying on a bed.A foot.A toes.A personA toesA personA toesA personA toesA personA toesA personA toesA personA toesA personA toesA personA toesA personA toesA personA toesA personA toesA personA toesA personA toes",
+        "hall_words": []
+      }
+    ]
+  },
+  "lora_inference_control_chair": {
+    "CHAIRs": 0.125,
+    "CHAIRi": 0.049275362318840575,
+    "n": 40,
+    "examples": [
+      {
+        "img_id": 183973,
+        "caption": "A baseball player swinging a bat.A catcher and umpire.A baseball player swinging a bat.A catcher and umpire.A baseball player swinging a bat.A catcher and umpire.A baseball player swinging a bat.A catcher and umpire.A baseball player swinging a bat.A catcher and umpire.",
+        "hall_words": []
+      },
+      {
+        "img_id": 431479,
+        "caption": "A umbrella in a store.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A umbrella.A um",
+        "hall_words": []
+      },
+      {
+        "img_id": 220638,
+        "caption": "A little boy eating cake.A person with a cupcake.A childs hand.A person with a cupcake.A childs hand.A person with a cupcake.A childs hand.A person with a cupcake.A childs hand.A person with a cupcake.A childs hand.A person with a cupcake",
+        "hall_words": []
+      },
+      {
+        "img_id": 466766,
+        "caption": "A woman holding a menu.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Airport.Air",
+        "hall_words": []
+      },
+      {
+        "img_id": 456261,
+        "caption": "A person laying on a bed.A foot.A toes.A leg.AAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA",
+        "hall_words": []
+      }
+    ]
+  }
+}

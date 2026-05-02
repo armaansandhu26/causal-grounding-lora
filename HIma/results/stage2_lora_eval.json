@@ -1,0 +1,15 @@
+{
+  "pope": {
+    "accuracy": 0.5,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "yes_rate": 0.0,
+    "n": 240
+  },
+  "chair": {
+    "CHAIRs": 0.05,
+    "CHAIRi": 0.016666666666666666,
+    "n": 40
+  }
+}

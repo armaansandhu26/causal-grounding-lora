@@ -1,0 +1,721 @@
+{
+  "config": {
+    "theta": 0.08,
+    "alpha": 8.0,
+    "n_eval": 40,
+    "n_heads_total": 32
+  },
+  "chair": {
+    "baseline": {
+      "CHAIRs": 0.3,
+      "CHAIRi": 0.10940746753246752,
+      "n": 40
+    },
+    "stage2": {
+      "CHAIRs": 0.05,
+      "CHAIRi": 0.025,
+      "n": 40
+    },
+    "stage3": {
+      "CHAIRs": 0.325,
+      "CHAIRi": 0.10700757575757577,
+      "n": 40
+    },
+    "stage4": {
+      "CHAIRs": 0.025,
+      "CHAIRi": 0.0125,
+      "n": 40
+    }
+  },
+  "pope": {
+    "baseline": {
+      "accuracy": 0.9083333333333333,
+      "f1": 0.8990825688073394,
+      "precision": 1.0,
+      "recall": 0.8166666666666667,
+      "yes_rate": 0.4083333333333333,
+      "n": 240
+    },
+    "stage2": {
+      "accuracy": 0.5208333333333334,
+      "f1": 0.09448818897637795,
+      "precision": 0.8571428571428571,
+      "recall": 0.05,
+      "yes_rate": 0.029166666666666667,
+      "n": 240
+    },
+    "stage3": {
+      "accuracy": 0.9083333333333333,
+      "f1": 0.8990825688073394,
+      "precision": 1.0,
+      "recall": 0.8166666666666667,
+      "yes_rate": 0.4083333333333333,
+      "n": 240
+    },
+    "stage4": {
+      "accuracy": 0.5208333333333334,
+      "f1": 0.09448818897637795,
+      "precision": 0.8571428571428571,
+      "recall": 0.05,
+      "yes_rate": 0.029166666666666667,
+      "n": 240
+    }
+  },
+  "theta_ablation": [
+    {
+      "theta": 0.04,
+      "CHAIRs": 0.05,
+      "CHAIRi": 0.025
+    },
+    {
+      "theta": 0.06,
+      "CHAIRs": 0.05,
+      "CHAIRi": 0.025
+    },
+    {
+      "theta": 0.08,
+      "CHAIRs": 0.025,
+      "CHAIRi": 0.0125
+    },
+    {
+      "theta": 0.1,
+      "CHAIRs": 0.025,
+      "CHAIRi": 0.0125
+    },
+    {
+      "theta": 0.12,
+      "CHAIRs": 0.025,
+      "CHAIRi": 0.0125
+    }
+  ],
+  "heads_ablation": [
+    {
+      "n_heads": "top-16",
+      "CHAIRs": 0.05,
+      "CHAIRi": 0.025
+    },
+    {
+      "n_heads": "top-32",
+      "CHAIRs": 0.025,
+      "CHAIRi": 0.0125
+    }
+  ],
+  "eval_captions": [
+    {
+      "img_id": 183973,
+      "gt": [
+        "sports ball",
+        "bench",
+        "baseball glove",
+        "baseball bat",
+        "person",
+        "backpack"
+      ],
+      "captions": {
+        "baseline": "The image captures a baseball game in progress, with a batter swinging a baseball bat at a pitch. The batter is in the middle of the scene, while the catcher and umpire are positioned behind him. There are several other players on the field, some of them holding baseball gloves, ready to catch the ball.\n\nIn the background, there are benches and",
+        "stage2": "A.ForBaseballPlayer.A.ForBaseballPlayer.A.ForBaseballPlayerA.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image captures a baseball game in progress, with a batter swinging a baseball bat at a pitch. The batter is in the middle of the scene, while the catcher and umpire are positioned behind him. There are several other players on the field, some of them holding baseball gloves, ready to catch the ball.\n\nIn the background, there are benches and",
+        "stage4": "A.ForBaseballPlayer.A.ForBaseballPlayer.A.ForBaseballPlayerA.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 431479,
+      "gt": [
+        "handbag",
+        "potted plant",
+        "umbrella"
+      ],
+      "captions": {
+        "baseline": "The image features a store window with a variety of items displayed. There are several umbrellas, including a large one that spans across the entire window, and a smaller one placed towards the right side. A potted plant is situated in the left corner of the window, adding a touch of greenery to the scene.\n\nIn addition to the umbrellas, there are",
+        "stage2": "A.A.U.A.U.A.U.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a store window with a variety of items displayed. There are several umbrellas, including a large one that spans across the entire window, and a smaller one placed towards the right side. A potted plant is situated in the left corner of the window, adding a touch of greenery to the scene.\n\nIn addition to the umbrellas, there are",
+        "stage4": "A.A.U.A.U.A.U.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 220638,
+      "gt": [
+        "chair",
+        "spoon",
+        "cake",
+        "bowl",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features a young boy sitting at a dining table, eating a bowl of cereal. He is using a spoon to scoop the cereal into his mouth. The table is surrounded by chairs, with one chair on the left side of the table and another on the right side.\n\nIn the background, there are two more people, one standing near",
+        "stage2": "AA boy with a cup of food.A personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a young boy sitting at a dining table, eating a bowl of cereal. He is using a spoon to scoop the cereal into his mouth. The table is surrounded by chairs, with one on the left side and another on the right side.\n\nIn the background, there are two more people, one on the left side and another",
+        "stage4": "AA boy with a bowl of cake.AAAAAaAaAaAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 466766,
+      "gt": [
+        "person",
+        "tie",
+        "handbag",
+        "vase",
+        "dining table",
+        "wine glass",
+        "cup",
+        "bottle"
+      ],
+      "captions": {
+        "baseline": "The image depicts a lively gathering of people in a room, with many of them standing around a bar. There are numerous people in the scene, some of them holding wine glasses, while others are engaged in conversations. The room is filled with various bottles, likely containing different types of wine, and a few cups can be seen as well.\n\nA d",
+        "stage2": "AA.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a lively gathering of people in a room, with many of them standing around a bar. There are numerous individuals engaged in conversation and enjoying the event. The room is filled with people, some standing closer to the bar while others are scattered throughout the space.\n\nVarious bottles can be seen on the bar, and a few wine glasses are placed",
+        "stage4": "AA.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 456261,
+      "gt": [
+        "bed",
+        "teddy bear",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features a person lying on a bed, covered in a blanket. The person appears to be a woman, and she is wearing a blue shirt. The bed is situated in a room with a window, providing natural light to the space. The person is positioned in the middle of the bed, with their feet visible at the bottom of the image.",
+        "stage2": "AA person sleeping on a bed.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a person lying on a bed, covered in a blanket. The person appears to be a woman, and she is wearing a blue shirt. The bed is situated in a room with a window, providing natural light to the space. The person is positioned in the middle of the bed, with their feet visible at the bottom of the image.",
+        "stage4": "AA person sleeping on a bed.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 292206,
+      "gt": [
+        "suitcase",
+        "person",
+        "truck",
+        "backpack"
+      ],
+      "captions": {
+        "baseline": "The image features a woman wearing a blue dress and a red wig, pulling a suitcase down a crowded street. She appears to be a drag queen, possibly participating in a parade or event. The street is filled with people, some of whom are standing close to the woman with the suitcase, while others are scattered throughout the scene.\n\nThere are two cars in",
+        "stage2": "Ai0lucionAi0lucionAi0lucionAi0AiAmanAiAmanAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a woman wearing a blue dress and a red wig, pulling a suitcase down a crowded street. She appears to be a drag queen, possibly participating in a parade or event. The street is filled with people, some of whom are standing close to the woman with the suitcase, while others are scattered throughout the scene.\n\nThere are two cars in",
+        "stage4": "Ai0lucionAi0lucionAi0lucionAi0AiAmanAiAmanAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 190156,
+      "gt": [
+        "laptop",
+        "book",
+        "scissors",
+        "cat",
+        "spoon",
+        "dining table",
+        "cup"
+      ],
+      "captions": {
+        "baseline": "The image features a black and white cat sitting on a desk in front of a computer screen. The cat is drinking from a cup placed on the desk, seemingly enjoying the beverage. The computer screen is visible in the background, and a keyboard can be seen nearby. The scene appears to be a cozy and relaxed environment for the cat.",
+        "stage2": "A cat drinking coffee.A cat on a computer.AAAA.AAAA.AAAAA.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a black and white cat sitting on a desk in front of a computer. The cat is drinking from a coffee cup placed on the desk. The desk is equipped with a keyboard and a mouse, indicating that it is a workspace.\n\nIn the background, there is a TV mounted on the wall, and a cell phone can be seen placed nearby.",
+        "stage4": "A cat drinking coffee.A cat on a computer.AAAA.AAAA.AAAAA.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 561856,
+      "gt": [
+        "handbag",
+        "person",
+        "umbrella"
+      ],
+      "captions": {
+        "baseline": "The image depicts a group of people walking down a flooded street in a city. Many of them are holding umbrellas to shield themselves from the rain. There are at least six umbrellas visible in the scene, with some people holding them above their heads and others using them as parasols.\n\nThe people are walking in various directions, with some closer to",
+        "stage2": "A.A.U.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a group of people walking down a flooded street in a city. Many of them are holding umbrellas to shield themselves from the rain. There are at least six umbrellas visible in the scene, with some being held by individuals closer to the foreground and others by those further back.\n\nThe people are walking in various directions, with some closer",
+        "stage4": "A.A.U.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 460461,
+      "gt": [
+        "car",
+        "bench",
+        "skateboard",
+        "cell phone",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image depicts a group of young men gathered on a sidewalk, enjoying their time together. They are sitting and standing around, with some of them holding skateboards. There are at least five skateboards visible in the scene, with one near the left side, another in the middle, and the remaining three on the right side.\n\nIn addition to the skate",
+        "stage2": "AManSittingSkateboardAndGFASAJumpingToAparkAAndAAndAAndAAAndAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a group of young men gathered on a sidewalk, enjoying their time together. They are sitting and standing around, with some of them holding skateboards. There are at least five skateboards visible in the scene, with one near the left side, another in the middle, and the remaining three on the right side.\n\nIn addition to the skate",
+        "stage4": "AManSittingSkateboardAndGFASAJumpingToAparkAAndAAndAAndAAAndAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 392659,
+      "gt": [
+        "dog",
+        "person",
+        "bicycle"
+      ],
+      "captions": {
+        "baseline": "The image features a woman riding a pink bicycle with a small dog sitting in a pink basket on the front. The woman is wearing a purple shirt and appears to be enjoying her ride. The dog is comfortably seated in the basket, looking out at the surroundings.\n\nIn the background, there are a few other people, one of",
+        "stage2": "A woman with a dog on a bike.A dog 2015A personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a woman riding a pink bicycle with a small dog sitting in a pink basket on the front. The woman is wearing a purple shirt and appears to be enjoying her ride. The dog is comfortably seated in the basket, looking out at the surroundings.\n\nIn the background, there are a few other people, one of",
+        "stage4": "A woman with a dog on a bike.A dog 2015A personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 326367,
+      "gt": [
+        "pizza",
+        "cup",
+        "cell phone",
+        "refrigerator",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image depicts a group of people gathered around a dining table, enjoying a meal together. There are several pizzas placed on the table, with one pizza being the main focus. The table is also set with various cups, forks, and knives, indicating that the guests are ready to eat.\n\nIn addition to the pizzas, there",
+        "stage2": "ALittlePizzaAndAChildsPizzaAndAChildsPizzaAAndAChildsAAndAChildAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a group of people gathered around a dining table, enjoying a meal together. There are several pizzas placed on the table, with one pizza being the main focus. The table is also set with various cups, forks, and knives, indicating that the guests are ready to eat.\n\nIn addition to the pizzas, there",
+        "stage4": "ALittlePizzaAndAChildsPizzaAndAChildsPizzaAAndAChildsAAndAChildAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 130645,
+      "gt": [
+        "car",
+        "person",
+        "bus"
+      ],
+      "captions": {
+        "baseline": "The image depicts a busy street with a large white and brown bus driving down the road. The bus is surrounded by various vehicles, including a car on the left side and another car on the right side of the bus. There are also two trucks in the scene, one located behind the bus and the other further back on the right side of the road.\n\nSeveral",
+        "stage2": "A bus and car on a road.A bus andA carA personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a busy street with a large white and brown bus driving down the road. The bus is surrounded by various vehicles, including a truck and a car. There are also several people visible on the street, some of them walking or standing near the vehicles.\n\nIn addition to the bus, there are two more cars on the road, one positioned behind the bus and",
+        "stage4": "A bus and car on a road.A bus andA carA personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 166060,
+      "gt": [
+        "handbag",
+        "carrot",
+        "giraffe",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features a woman feeding a giraffe at a petting zoo. The giraffe is standing close to the woman, and she is holding a carrot for the giraffe to eat. There are several other people in the scene, some of them standing near the giraffe, while others are scattered around the petting zoo.\n\nIn addition to the people and",
+        "stage2": "A giraffe licking a woman.A girl with a giraffe.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a woman feeding a giraffe at a petting zoo. The giraffe is standing close to the woman, and she is holding a carrot for the giraffe to eat. There are several other people in the scene, some of them standing near the giraffe, while others are scattered around the petting zoo.\n\nIn addition to the gira",
+        "stage4": "A giraffe licking a woman.AZoA giraffeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 473215,
+      "gt": [
+        "cup",
+        "banana",
+        "bowl",
+        "dining table"
+      ],
+      "captions": {
+        "baseline": "The image features a dining table with two glasses filled with delicious desserts. One glass is filled with a banana split, while the other contains a chocolate dessert. The banana split is topped with whipped cream and a cherry, adding a touch of color and sweetness to the presentation. The chocolate dessert is served in a cup",
+        "stage2": "AIoA ice cream on a table.AAnAAAaAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a dining table with two desserts on it. One dessert is a banana split, which is a popular ice cream treat, and the other dessert is a chocolate sundae. The banana split is served in a glass, while the chocolate sundae is placed in a bowl.\n\nThere are also two cups",
+        "stage4": "AIoA ice cream on a table.AAnAAAaAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 275488,
+      "gt": [
+        "laptop",
+        "bottle",
+        "banana",
+        "suitcase",
+        "person",
+        "backpack"
+      ],
+      "captions": {
+        "baseline": "The image features a group of four men sitting together on a train, each with their own laptop. They appear to be engaged in their respective activities, possibly working or studying. The men are seated in various positions, with some sitting closer to the front of the train and others towards the back.\n\nThere are two bottles visible in the scene, one located near the left side of the",
+        "stage2": "AMan sitting on a computer.A personAManAJordanABoydAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a group of four men sitting together on a bench, with a laptop placed in front of them. They appear to be engaged in a conversation or working on the laptop. The men are positioned in various ways, with some sitting closer to the laptop and others further away.\n\nThere are two bottles visible in the scene, one located near the left side of the ben",
+        "stage4": "AMan sitting on a computer.A personAManAJordanABoydAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 397658,
+      "gt": [
+        "handbag",
+        "cell phone",
+        "person",
+        "bottle"
+      ],
+      "captions": {
+        "baseline": "The image features a woman wearing glasses, talking on her cell phone while standing on a sidewalk. She is surrounded by several other people, some of whom are also engaged in conversations on their phones.\n\nThere are a few handbags visible in the scene, with one near the woman on the phone and another further away. The overall atmosphere appears to be a busy urban",
+        "stage2": "A woman talking on phone.A woman talking on phone.A personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a woman wearing glasses, talking on her cell phone while standing on a sidewalk. She is surrounded by several other people, some of whom are also engaged in conversations on their phones.\n\nThere are a few handbags visible in the scene, with one near the woman on the phone and another further away. The overall atmosphere appears to be a busy urban",
+        "stage4": "A woman talking on phone.A woman talking on phone.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 562207,
+      "gt": [
+        "elephant",
+        "person",
+        "bowl"
+      ],
+      "captions": {
+        "baseline": "The image features a group of people standing near a large elephant in a river. There are three people in the scene, with one person on the left side, another in the middle, and the third person on the right side. The elephant is positioned between the people, with its trunk reaching towards the ground.\n\nThe people appear to be enjoying their time with",
+        "stage2": "Africa with a elephant.A person with a hat andAfricaA personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a group of people standing near a large elephant in a river. There are three people in the scene, with one person on the left side, another in the middle, and the third person on the right side. The elephant is positioned between the two people on the left and the one on the right, creating a captivating scene.\n\nThe people",
+        "stage4": "Africa with a elephant.AfricaAfricaAfricaAfricaAfricaAfricaAfricaAfricaAfricaAfricaAfricaAfricaAfricaAfricaAfricaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 308358,
+      "gt": [
+        "car",
+        "handbag",
+        "bicycle",
+        "person",
+        "backpack"
+      ],
+      "captions": {
+        "baseline": "The image depicts a busy street scene with a large group of people walking down the sidewalk. Among the crowd, there are several children and adults, all engaged in their activities. Some of the people are carrying handbags, while others have backpacks.\n\nThe street is filled with various modes of transportation, including bicycles and motorcycles. There are",
+        "stage2": "AA.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a busy street scene with a large group of people walking down the sidewalk. Among the crowd, there are several children and adults, all engaged in their activities. Some of the people are carrying handbags, while others have backpacks.\n\nThe street is filled with various modes of transportation, including bicycles and motorcycles. There are",
+        "stage4": "AA.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 548703,
+      "gt": [
+        "chair",
+        "spoon",
+        "cake",
+        "bowl",
+        "dining table",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features two women standing in a kitchen, working together to decorate a cake. They are both focused on the task at hand, with one woman using a knife to spread frosting on the cake. The cake is placed on a dining table, which occupies a significant portion of the scene.\n\nThe kitchen is well-equipped with various items,",
+        "stage2": "A woman with a cake on a counter with 2A personAaAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features two women standing in a kitchen, working together to decorate a cake. They are both focused on the task at hand, with one woman using a knife to spread frosting on the cake. The cake is placed on a dining table, which occupies a significant portion of the scene.\n\nThe kitchen is well-equipped with various items,",
+        "stage4": "A woman with a cake on a counter with 2A personAaAAnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 85390,
+      "gt": [
+        "clock",
+        "microwave",
+        "cup",
+        "cell phone",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features a man standing in a kitchen, holding a coffee mug in his hand. He is taking a selfie with his cell phone, capturing the moment. The kitchen is well-equipped with a refrigerator, an oven, and a sink.\n\nThere are several cups placed around the kitchen, with one near the man and others on the countertop",
+        "stage2": "AManTakingSelfieWithCoffeeAndAPhoneAndAManAAndAAAndAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a man standing in a kitchen, holding a coffee mug in his hand. He is taking a selfie with his cell phone, capturing the moment. The kitchen is well-equipped with a refrigerator, an oven, and a sink.\n\nThere are several cups placed around the kitchen, with one near the man and others on the countertop",
+        "stage4": "AManTakingSelfieWithCoffeeAndAPhoneAndAManAAndAAAndAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 546717,
+      "gt": [
+        "laptop",
+        "mouse",
+        "couch",
+        "potted plant",
+        "cup",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features a woman sitting on a couch, wearing glasses and a striped shirt. She is using a laptop computer, which is placed on her lap. The laptop is open, and she appears to be typing or browsing the internet.\n\nThe room also contains a potted plant located near the top left corner, and a cup can be seen on a surface towards",
+        "stage2": "A woman on a computer.A personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a woman sitting on a couch, wearing a striped shirt and glasses. She is using a laptop computer, which is placed on her lap. The laptop is open, and she appears to be typing or browsing the internet.\n\nIn the room, there are several books scattered around, with some placed on the couch and others on the floor. A",
+        "stage4": "A woman on a computer.A personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 67213,
+      "gt": [
+        "dog",
+        "car",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image captures a dog performing a daring trick in mid-air, jumping over a car. The dog is in the center of the scene, showcasing its impressive agility. \n\nThere are several people in the image, watching the dog's performance. Some of them are standing near the car, while others are positioned further away. A truck can",
+        "stage2": "A dog jumping in the air.A dogA personA dogA personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image captures a dog performing a daring trick in mid-air, jumping over a car. The dog is in the center of the scene, showcasing its impressive agility. \n\nThere are several people in the image, watching the dog's performance. Some of them are standing near the car, while others are positioned further away. A truck can",
+        "stage4": "A dog jumping in the air.A dogA personA dogA personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 293804,
+      "gt": [
+        "chair",
+        "vase",
+        "potted plant",
+        "couch"
+      ],
+      "captions": {
+        "baseline": "The image features a cozy living room with a fireplace as the focal point. The fireplace is surrounded by two couches, one on the left side and the other on the right side of the room. A chair is also present in the room, located near the left couch.\n\nIn addition to the seating, there are a few decorative elements in the room",
+        "stage2": "A chair.A couch.A fireplace.AAChairAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a cozy living room with a fireplace as the focal point. The fireplace is surrounded by two couches, one on the left side and the other on the right side of the room. A chair is also present in the room, located near the left couch.\n\nIn addition to the seating, there are a few decorative elements in the room",
+        "stage4": "A chair.A couch.A fireplace.AAChairAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 240403,
+      "gt": [
+        "person",
+        "tennis racket",
+        "sports ball"
+      ],
+      "captions": {
+        "baseline": "The image features a group of four young children standing on a tennis court, each holding a tennis racket. They are posing for a picture, showcasing their enthusiasm for the sport. The children are positioned in a way that they are all visible in the frame, with one child on the left side, another in the middle, and the remaining two on the right side of",
+        "stage2": "Aiot tennis players.A tennis court with a girl with a hatAAAAAAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a group of four young children standing on a tennis court, each holding a tennis racket. They are posing for a picture, showcasing their enthusiasm for the sport. The children are positioned in a way that they are all visible in the frame, with one child on the left side, another in the middle, and the remaining two on the right side of",
+        "stage4": "Aiot tennis players.A tennis court with a girl with a hatAAAAAAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 82812,
+      "gt": [
+        "train",
+        "handbag",
+        "suitcase",
+        "person",
+        "backpack"
+      ],
+      "captions": {
+        "baseline": "The image depicts a busy train station with a train on the tracks, surrounded by a crowd of people. Many individuals are waiting for the train, while others are standing nearby. Some people are carrying backpacks, and a few are holding handbags.\n\nThere are several suitcases scattered throughout the scene, indicating that some passengers might be traveling with luggage. The",
+        "stage2": "Airport with people on train.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a busy train station with a large group of people waiting for their train. There are at least 14 people visible in the scene, some standing closer to the train while others are further away.\n\nSeveral pieces of luggage can be seen throughout the station, including three suitcases, two backpacks, and a handbag. The suitcases",
+        "stage4": "Airport with people on a train.A walkway toAirportA personAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 36962,
+      "gt": [
+        "book",
+        "chair",
+        "cat",
+        "tv"
+      ],
+      "captions": {
+        "baseline": "The image features a cat sitting on top of a door, seemingly looking through the window. The cat is positioned near the center of the scene, with its body stretched out.\n\nIn the background, there is a television set placed on a table. The television is located towards the right side of the image, with a chair positioned in front of it. The room appears to",
+        "stage2": "AiostionA.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a cat sitting on top of a door, seemingly looking through the window. The cat is positioned near the center of the scene, with its body stretched out.\n\nIn the background, there is a TV mounted on the wall, and a chair is placed nearby. The room appears to be a living space, with a couch located towards the right side of the",
+        "stage4": "AiostionA.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 526342,
+      "gt": [
+        "chair",
+        "potted plant",
+        "bottle",
+        "refrigerator"
+      ],
+      "captions": {
+        "baseline": "The image features a small market with a variety of items on display. There is a mini market stand with a sign that reads \"Roman.\" The market is situated next to a small refrigerator, which is filled with drinks.\n\nIn the scene, there are several chairs placed around the market, with one chair located near the left side of the image, another chair in",
+        "stage2": "AStorehouseAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a small market with a variety of items on display. There is a mini market stand with a sign that reads \"Roman.\" The market is situated next to a small refrigerator, which is filled with drinks.\n\nIn the scene, there are several chairs placed around the market, with one near the left side, another in the middle, and a third",
+        "stage4": "AStorehouseAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfricanAfrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 216228,
+      "gt": [
+        "handbag",
+        "person",
+        "skateboard",
+        "bicycle"
+      ],
+      "captions": {
+        "baseline": "The image features a woman riding a skateboard down a sidewalk, passing by a star on the sidewalk. She is wearing a scarf and appears to be enjoying her ride. The woman is also carrying a handbag while skateboarding.\n\nIn the background, there is a restaurant with a sign advertising burritos. The scene captures a cas",
+        "stage2": "AA woman on a skateboard.AAAAA.AAAAAA.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a woman riding a skateboard down a sidewalk, passing by a star on the sidewalk. She is wearing a scarf and appears to be enjoying her ride. The woman is also carrying a handbag while skateboarding.\n\nIn the background, there is a restaurant with a sign advertising burritos. The scene captures a cas",
+        "stage4": "AA woman on a skateboard.AAAAA.AAAAAA.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 382111,
+      "gt": [
+        "car",
+        "truck",
+        "horse",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features a young man sitting on a white horse, likely at a gas station. The man is wearing a white hat and appears to be enjoying his time on the horse. There are several other people in the scene, some standing near the gas station and others further away.\n\nIn the background, there are multiple cars parked, with some closer to the gas station and others",
+        "stage2": "A man on a horse.A person with a horse.A person with a horseAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a young man sitting on a white horse, likely at a gas station. The man is wearing a white hat and appears to be enjoying his time on the horse. There are several other people in the scene, some standing near the gas station and others further away.\n\nIn the background, there are multiple cars parked, with some closer to the gas station and others",
+        "stage4": "A guy on a horse.A guy on a horse.A guaAaAaAaAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 409331,
+      "gt": [
+        "book",
+        "umbrella",
+        "person",
+        "clock"
+      ],
+      "captions": {
+        "baseline": "The image features a man wearing glasses and a pink shirt, holding a camera in his hands. He is smiling and appears to be enjoying the moment. The camera is positioned in front of him, capturing the scene.\n\nIn the background, there is a TV mounted on the wall, and a potted plant can be seen placed nearby. Additionally, there",
+        "stage2": "AManWithUmbrellaAAndAWithACameraAAndAWithAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a man wearing glasses and a pink shirt, holding a camera in his hands. He is smiling and appears to be enjoying the moment. The camera is positioned in front of him, capturing the scene.\n\nIn the background, there is a TV mounted on the wall, and a potted plant can be seen placed nearby. Additionally, there",
+        "stage4": "AManWithUmbrellaAAndAWithACameraAAndAWithAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 253624,
+      "gt": [
+        "cat",
+        "chair",
+        "bottle",
+        "dining table"
+      ],
+      "captions": {
+        "baseline": "The image features a brown and black cat comfortably sitting on the back of a wooden chair. The cat appears to be enjoying its time on the chair, possibly observing its surroundings. The chair is positioned near a dining table, which occupies a significant portion of the scene.\n\nIn addition to the chair and table, there are a few other items in the room",
+        "stage2": "A cat on a chair.A cat 100lolA chairAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a brown and black cat comfortably sitting on the back of a wooden chair. The cat appears to be enjoying its time on the chair, possibly observing its surroundings. The chair is positioned near a dining table, which occupies a significant portion of the scene.\n\nIn addition to the chair and dining table, there are a few other items in",
+        "stage4": "A cat on a chair.A cat 100lolA chairAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 417023,
+      "gt": [
+        "tie",
+        "person",
+        "cake"
+      ],
+      "captions": {
+        "baseline": "The image captures a heartwarming moment between a newlywed couple. The bride is feeding the groom a piece of cake, while he smiles and enjoys the treat. The couple is dressed in formal attire, with the bride wearing a veil and the groom wearing a tie.\n\nThe cake is placed in the center of the",
+        "stage2": "AManEatingCakeByAManAndAWomanAAndAAndAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image captures a heartwarming moment between a newlywed couple. The bride is feeding the groom a piece of cake, while he smiles and enjoys the treat. The couple is dressed in formal attire, with the bride wearing a veil and the groom wearing a tie.\n\nThe cake is placed in the center of the",
+        "stage4": "AManEatingCakeByAManAndAWomanAAndAAndAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 301494,
+      "gt": [
+        "car",
+        "truck",
+        "cake"
+      ],
+      "captions": {
+        "baseline": "The image features a chocolate cake with a toy car driving through it. The car is positioned in the middle of the cake, creating a unique and playful scene. The cake is decorated with various chocolate elements, including a tree and a few rocks. The overall presentation of the cake is creative and visually appealing.",
+        "stage2": "AA cake with cars and trees and cake on a table.AAAAAAAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a chocolate cake with a toy car driving through it. The toy car is positioned in the middle of the cake, creating a unique and playful scene. The cake is decorated with various chocolate elements, including a tree and a few rocks. The overall presentation of the cake is creative and visually appealing.",
+        "stage4": "AA cake with cars and trees and cake on a table.AAAAAAAaAaAaAaAaAaAaAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 162067,
+      "gt": [
+        "car",
+        "handbag",
+        "truck",
+        "skateboard",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image captures a skateboarder performing a jump in the air, likely in a city setting. The skateboarder is in the middle of the scene, with the skateboard visible beneath him. \n\nThere are several people in the image, including a woman standing near the skateboarder and others scattered throughout the scene. A few cars are parked or driving",
+        "stage2": "Air.Jumping.NoOne.AirJumping.AAnotherAAnotherAAnotherAAnotherAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image captures a skateboarder performing a jump in the air, likely in a city setting. The skateboarder is in the middle of the scene, with the skateboard visible beneath him. \n\nThere are several people in the image, including a woman standing near the skateboarder and others scattered throughout the scene. A few cars are parked or driving",
+        "stage4": "Air.Jumping.NoOne.AirJumping.AAnotherAAnotherAAnotherAAnotherAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 256343,
+      "gt": [
+        "pizza",
+        "knife",
+        "potted plant",
+        "bowl",
+        "sink",
+        "cup",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features a woman standing in a kitchen, preparing a pizza. She is in the process of adding toppings to the pizza, which is placed on a cutting board on the counter. The kitchen is well-equipped with various utensils and appliances.\n\nThere are multiple knives, with one near the woman and others scattered around the kitchen. A sp",
+        "stage2": "AA woman with glasses and a pizza.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a woman standing in a kitchen, preparing a pizza. She is in the process of adding toppings to the pizza, which is placed on a cutting board on the counter. The kitchen is well-equipped with various utensils and appliances.\n\nThere are multiple knives, with one near the pizza and others scattered around the kitchen. A",
+        "stage4": "AA woman with glasses and a pizza.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 153445,
+      "gt": [
+        "tv",
+        "couch",
+        "vase",
+        "bowl",
+        "cup",
+        "bottle"
+      ],
+      "captions": {
+        "baseline": "The image depicts a cozy living room with a large flat-screen TV mounted on the wall. The room is furnished with a couch and a chair, both of which are positioned in front of the TV. There is also a dining table in the room, surrounded by chairs.\n\nIn addition to the seating, the living room features a bookshelf",
+        "stage2": "ASofaA 3DWorldA 3DTVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a cozy living room with a large flat-screen TV mounted on the wall. The room is furnished with a couch and a chair, both of which are positioned in front of the TV. There is also a dining table in the room, surrounded by chairs.\n\nIn addition to the seating, the living room features a potted plant",
+        "stage4": "ASofaA 3DWorldA 3DTVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 284286,
+      "gt": [
+        "bottle",
+        "handbag",
+        "person",
+        "umbrella"
+      ],
+      "captions": {
+        "baseline": "The image depicts a group of people, including children, standing together on a sidewalk. They are holding umbrellas to protect themselves from the rain. There are at least four umbrellas visible in the scene, with one being held by a person on the left side, another by a person in the middle, and two more on the right side.\n\nThe group",
+        "stage2": "A.A.U.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a group of people, including children, standing together on a sidewalk. They are holding umbrellas to protect themselves from the rain. There are at least four umbrellas visible in the scene, with one being held by a person on the left side, another by a person in the middle, and two more on the right side.\n\nThe group",
+        "stage4": "A.A.U.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 293022,
+      "gt": [
+        "book",
+        "stop sign",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image features a collection of artwork displayed on a sidewalk. There are several paintings and a stop sign among the art pieces. The paintings are arranged in a row, with some of them placed closer to the viewer and others further away. The stop sign is positioned in the middle of the artwork, adding an interesting contrast to the artistic display. The scene appears to",
+        "stage2": "AStop sign with grass.APlantsAArtistAOfAOfAOfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features a collection of artwork displayed on a sidewalk. There are several paintings and a stop sign among the art pieces. The paintings are arranged in a row, with some of them placed closer to the viewer and others further away. The stop sign is positioned in the middle of the artwork, adding an interesting contrast to the artistic display. The scene appears to",
+        "stage4": "AStop sign with grass.APlantsAArtistAOfAOfAOfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 378147,
+      "gt": [
+        "tie",
+        "person",
+        "tv"
+      ],
+      "captions": {
+        "baseline": "The image features an older man standing in front of a computer screen, which is displaying a music score. He appears to be engaged in the presentation, possibly discussing the music or analyzing the score. The man is wearing a tie, which adds a formal touch to his attire.\n\nThe computer screen occupies a significant portion of the image, with the music score prominently",
+        "stage2": "AManWithGlassesAndWalletAndAComputerAndAHairAAndAAAndAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image features an older man standing in front of a computer screen, which is displaying a music score. He appears to be engaged in the presentation, possibly discussing the music or analyzing the score. The man is wearing a tie, which adds a formal touch to his attire.\n\nThe computer screen occupies a significant portion of the image, with the music score prominently",
+        "stage4": "AManWithGlassesAndWalletAndAComputerAndAHairAAndAAAndAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    },
+    {
+      "img_id": 364596,
+      "gt": [
+        "car",
+        "handbag",
+        "traffic light",
+        "bicycle",
+        "person"
+      ],
+      "captions": {
+        "baseline": "The image depicts a group of people gathered on a city street, protesting against bankers and the prison system. They are holding signs and expressing their opinions. There are at least nine people in the scene, with some standing closer to the foreground and others further back.\n\nIn the background, there are two traffic lights, one on the left side and the other on the",
+        "stage2": "AAndA.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "stage3": "The image depicts a group of protesters gathered on a city street, holding signs and expressing their opinions. There are at least nine people in the scene, with some standing closer to the foreground and others further back.\n\nThe street is busy with various vehicles, including a car parked on the right side of the image, another car in the middle, and a bicy",
+        "stage4": "AAndA.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      }
+    }
+  ]
+}

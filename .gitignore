@@ -1,2 +1,3 @@
 llava_hallucination_heads/coco/
 .claude/
+.venv/

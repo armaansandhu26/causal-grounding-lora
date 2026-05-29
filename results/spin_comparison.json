@@ -3,8 +3,9 @@
   "spin_config": {
     "start_layer": 0,
     "end_layer": 32,
-    "keep_ratio": 0.95,
-    "scale": 0.0
+    "routed_head": 0.8,
+    "small_num_mask": 0.1,
+    "note": "Paper CHAIR setting. Faithful replica of attentionSPIN.py."
   },
   "results": {
     "Baseline": {
@@ -22,17 +23,17 @@
       "n": 400
     },
     "SPIN (Sarkar+25)": {
-      "CHAIRs": 0.3525,
+      "CHAIRs": 0.2975,
       "CHAIRs_CI": [
-        0.3075,
-        0.4
+        0.255,
+        0.345
       ],
-      "CHAIRi": 0.1272998529248529,
+      "CHAIRi": 0.11913893398268396,
       "CHAIRi_CI": [
-        0.10651092241092242,
-        0.15017788825757575
+        0.09874669349747475,
+        0.14151320008116877
       ],
-      "avg_len": 60.75,
+      "avg_len": 51.0025,
       "n": 400
     }
   }

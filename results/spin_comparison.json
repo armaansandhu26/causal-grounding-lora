@@ -1,40 +1,15 @@
 {
-  "n_paired": 400,
+  "experiment": "SPIN vs Baseline on Stage 4 eval set (400 images)",
+  "manifest": "results/spin_experiment_manifest.json",
+  "prompt": "USER: <image>\\nDescribe this image in detail.\\nASSISTANT:",
   "spin_config": {
     "start_layer": 0,
     "end_layer": 32,
-    "routed_head": 0.8,
-    "small_num_mask": 0.1,
-    "note": "Paper CHAIR setting. Faithful replica of attentionSPIN.py."
+    "routed_head": 0.95,
+    "small_num_mask": 0.08,
+    "note": "Paper Table 1 LLaVA-7B greedy CHAIR (r=0.05 suppressed, alpha=0.08)"
   },
-  "results": {
-    "Baseline": {
-      "CHAIRs": 0.3625,
-      "CHAIRs_CI": [
-        0.315,
-        0.4075
-      ],
-      "CHAIRi": 0.13746332140082138,
-      "CHAIRi_CI": [
-        0.11484694715007214,
-        0.15998390741203242
-      ],
-      "avg_len": 60.7675,
-      "n": 400
-    },
-    "SPIN (Sarkar+25)": {
-      "CHAIRs": 0.2975,
-      "CHAIRs_CI": [
-        0.255,
-        0.345
-      ],
-      "CHAIRi": 0.11913893398268396,
-      "CHAIRi_CI": [
-        0.09874669349747475,
-        0.14151320008116877
-      ],
-      "avg_len": 51.0025,
-      "n": 400
-    }
-  }
+  "budget_80": {"status": "pending", "max_new_tokens": 80},
+  "budget_64": {"status": "pending", "max_new_tokens": 64},
+  "budget_128": {"status": "pending", "max_new_tokens": 128}
 }

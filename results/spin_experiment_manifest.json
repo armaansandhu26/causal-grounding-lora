@@ -1,0 +1,74 @@
+{
+  "experiment": "SPIN baseline comparison (LLaVA-1.5-7B, COCO val2014)",
+  "notebook": "spin_comparison.ipynb",
+  "eval_set": {
+    "source": "results/stage4_400img_results.json",
+    "n_images": 400,
+    "split": "same img_ids as Stage 4 four-way eval",
+    "prompt": "USER: <image>\\nDescribe this image in detail.\\nASSISTANT:"
+  },
+  "model": {
+    "id": "llava-hf/llava-1.5-7b-hf",
+    "dtype": "fp16",
+    "attn_implementation": "eager",
+    "lora_loaded": false
+  },
+  "spin_config": {
+    "start_layer": 0,
+    "end_layer": 32,
+    "routed_head": 0.95,
+    "small_num_mask": 0.08,
+    "paper_reference": "Table 1 LLaVA-1.5-7B greedy CHAIR: r=0.05 suppressed, alpha=0.08"
+  },
+  "spin_implementation": {
+    "source_repo": "https://github.com/YUECHE77/SPIN",
+    "source_file": "attentionSPIN.py",
+    "notebook_section": "Section 5 — llama_spin_forward + gen_spin"
+  },
+  "runs": {
+    "budget_80": {
+      "status": "pending",
+      "max_new_tokens": 80,
+      "artifacts": {
+        "spin_captions": "results/spin_captions_budget80.json",
+        "baseline_captions": "results/baseline_captions_budget80.json",
+        "colab_cache_spin": "Drive/cache/spin_captions_budget80.json",
+        "colab_cache_baseline": "Drive/cache/baseline_captions_budget80.json"
+      }
+    },
+    "budget_64": {
+      "status": "pending",
+      "max_new_tokens": 64,
+      "artifacts": {
+        "spin_captions": "results/spin_captions_budget64.json",
+        "baseline_captions": "results/baseline_captions_budget64.json",
+        "colab_cache_spin": "Drive/cache/spin_captions_budget64.json",
+        "colab_cache_baseline": "Drive/cache/baseline_captions_budget64.json"
+      }
+    },
+    "budget_128": {
+      "status": "pending",
+      "max_new_tokens": 128,
+      "artifacts": {
+        "spin_captions": "results/spin_captions_budget128.json",
+        "baseline_captions": "results/baseline_captions_budget128.json",
+        "colab_cache_spin": "Drive/cache/spin_captions_budget128.json",
+        "colab_cache_baseline": "Drive/cache/baseline_captions_budget128.json"
+      }
+    }
+  },
+  "superseded": {
+    "note": "Prior run used non-paper hyperparams (routed_head=0.8, small_num_mask=0.1). Do not use for publication.",
+    "config": {"routed_head": 0.8, "small_num_mask": 0.1},
+    "artifacts": ["results/spin_captions_s4ids.json"],
+    "results_at_80_tokens": {
+      "Baseline": {"CHAIRs": 0.3625, "CHAIRi": 0.1375, "avg_len_words": 60.8},
+      "SPIN": {"CHAIRs": 0.2975, "CHAIRi": 0.1191, "avg_len_words": 51.0}
+    }
+  },
+  "evaluation": {
+    "metric": "CHAIRs / CHAIRi",
+    "significance": "bootstrap 95% CI, n_boot=2000, seed=42",
+    "length_control": "Regenerate baseline + SPIN at same max_new_tokens per budget"
+  }
+}

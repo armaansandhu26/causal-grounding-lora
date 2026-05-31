@@ -6,12 +6,12 @@ This repository is the **final** course implementation: we locate attention head
 
 ## Pipeline at a glance
 
-| Stage | What it does | Main artifact |
-|-------|----------------|---------------|
-| **1** | Screen COCO val images, trace generation, rank heads, **causal validation** → shortlist of hallucination-linked heads | `stage1_hallucination_heads.ipynb` → `results/final_hallucination_heads.json` |
-| **2** | QLoRA on Q/K/V in layers that contain the shortlist (32 heads) using contrastive caption pairs | `stage2_lora.ipynb` → `results/stage2_lora_adapter/` |
-| **3** | At decode time, compute a **visual grounding score** from attention in those heads; penalize risky content-word logits | `stage3_inference_grounding.ipynb` |
-| **4** | **Four-way eval**: baseline / LoRA / controller / LoRA+controller; optional θ and head-count ablations | `stage4_comparison.ipynb` (40 images, CHAIR + POPE), `stage4_final_1.ipynb` (400 images, CHAIR + ablations) |
+| Stage | What it does                                                                                                                  | Main artifact                                                                                               |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **1** | Screen **500** COCO val images, trace generation, rank heads, **causal validation** → shortlist of hallucination-linked heads | `stage1_hallucination_heads.ipynb` → `results/final_hallucination_heads.json`                               |
+| **2** | QLoRA on Q/K/V in layers that contain the shortlist (32 heads) using contrastive caption pairs                                | `stage2_lora.ipynb` → `results/stage2_lora_adapter/`                                                        |
+| **3** | At decode time, compute a **visual grounding score** from attention in those heads; penalize risky content-word logits        | `stage3_inference_grounding.ipynb`                                                                          |
+| **4** | **Four-way eval**: baseline / LoRA / controller / LoRA+controller; optional θ and head-count ablations                        | `stage4_comparison.ipynb` (40 images, CHAIR + POPE), `stage4_final_1.ipynb` (400 images, CHAIR + ablations) |
 
 Optional exploratory notebook: `validation_Experiments.ipynb`.
 
@@ -22,6 +22,8 @@ Optional exploratory notebook: `validation_Experiments.ipynb`.
 Notebooks assume a **GPU runtime** (e.g. Colab A100) and paths under a working directory such as Google Drive (`WORK_DIR` in each notebook). Typical order:
 
 1. Run **Stage 1** once (or skip if you only change LoRA/controller hyperparameters and keep `final_hallucination_heads.json`).
+   - **Smoke test:** `DRY_RUN = True` in `stage1_hallucination_heads.ipynb` → 5 images, ~15–25 min, outputs in `results/dryrun/`.
+   - **Production:** `DRY_RUN = False` → 500 images, ~5–7 hr A100; set `WIPE_CACHE = True` once before starting.
 2. Run **Stage 2** to train or refresh the LoRA adapter.
 3. Run **Stage 3** to develop or inspect the grounding controller.
 4. Run **Stage 4** notebooks for published metrics; they load the base model, optional LoRA, and the controller flags as configured in the notebook.
@@ -34,20 +36,20 @@ There is no root `requirements.txt`; dependencies match a standard LLaVA + `tran
 
 ### CHAIR — 40-image suite (`results/stage4_all_results.json`, θ = 0.08, α = 8)
 
-| Condition | CHAIRs | CHAIRi |
-|-----------|--------|--------|
-| Baseline | 0.30 | 0.109 |
-| Stage 2 (LoRA only) | 0.05 | 0.025 |
-| Stage 3 (controller only) | 0.325 | 0.107 |
+| Condition                       | CHAIRs    | CHAIRi     |
+| ------------------------------- | --------- | ---------- |
+| Baseline                        | 0.30      | 0.109      |
+| Stage 2 (LoRA only)             | 0.05      | 0.025      |
+| Stage 3 (controller only)       | 0.325     | 0.107      |
 | **Stage 4 (LoRA + controller)** | **0.025** | **0.0125** |
 
 ### CHAIR — 400-image suite (`results/stage4_400img_results.json`, same θ, α)
 
-| Condition | CHAIRs | CHAIRi |
-|-----------|--------|--------|
-| Baseline | 0.363 | 0.137 |
-| Stage 2 (LoRA only) | 0.073 | 0.039 |
-| Stage 3 (controller only) | 0.350 | 0.134 |
+| Condition                       | CHAIRs    | CHAIRi    |
+| ------------------------------- | --------- | --------- |
+| Baseline                        | 0.363     | 0.137     |
+| Stage 2 (LoRA only)             | 0.073     | 0.039     |
+| Stage 3 (controller only)       | 0.350     | 0.134     |
 | **Stage 4 (LoRA + controller)** | **0.070** | **0.039** |
 
 On the 40-image run, **LoRA alone** already improves CHAIR strongly; **adding the controller** lowers CHAIR further (Stage 4 best). Controller-only (Stage 3) is **not** meant as a standalone win on CHAIR in this setup—it is the piece that combines with LoRA in Stage 4.
@@ -58,17 +60,35 @@ POPE is mostly driven by the **yes/no** answer behavior of the LoRA checkpoint i
 
 ---
 
+## SPIN baseline comparison
+
+Notebook: `spin_comparison.ipynb` (Colab A100). Compares **greedy baseline vs SPIN** on the same 400-image Stage 4 eval set at fixed token budgets (80, 64, 128).
+
+**SPIN hyperparams (paper Table 1):** `routed_head=0.95`, `small_num_mask=0.08`, layers 0–32.
+
+| Artifact                                | Role                                     |
+| --------------------------------------- | ---------------------------------------- |
+| `results/spin_experiment_manifest.json` | Experiment log + superseded 0.8/0.1 run  |
+| `results/spin_comparison.json`          | CHAIR metrics + bootstrap CIs per budget |
+| `results/spin_captions_budget*.json`    | SPIN captions per token budget           |
+
+**Status:** all budgets pending re-run with paper config (Section 6 in notebook).
+
+**Stage 1:** screening now uses **500** COCO val images (`SCREEN_N` in `stage1_hallucination_heads.ipynb`). Re-running Stage 1 produces a new head shortlist → **must re-run Stages 2–4** afterward.
+
+---
+
 ## Key files
 
-| Path | Role |
-|------|------|
-| `results/final_hallucination_heads.json` | 32-head shortlist from Stage 1 |
-| `results/stage2_lora_adapter/` | Saved PEFT adapter after Stage 2 |
-| `results/stage2_baseline_eval.json`, `results/stage2_lora_eval.json` | Early baseline vs LoRA snapshot evals |
-| `results/stage2_training_log.json` | Training run metadata |
-| `results/stage4_all_results.json` | Full 40-image comparison + ablation slices |
-| `results/stage4_400img_results.json` | 400-image CHAIR, θ/head ablations, sample captions |
-| `682_project_proposal.pdf` | Original project proposal |
+| Path                                                                 | Role                                               |
+| -------------------------------------------------------------------- | -------------------------------------------------- |
+| `results/final_hallucination_heads.json`                             | 32-head shortlist from Stage 1                     |
+| `results/stage2_lora_adapter/`                                       | Saved PEFT adapter after Stage 2                   |
+| `results/stage2_baseline_eval.json`, `results/stage2_lora_eval.json` | Early baseline vs LoRA snapshot evals              |
+| `results/stage2_training_log.json`                                   | Training run metadata                              |
+| `results/stage4_all_results.json`                                    | Full 40-image comparison + ablation slices         |
+| `results/stage4_400img_results.json`                                 | 400-image CHAIR, θ/head ablations, sample captions |
+| `682_project_proposal.pdf`                                           | Original project proposal                          |
 
 ---
 

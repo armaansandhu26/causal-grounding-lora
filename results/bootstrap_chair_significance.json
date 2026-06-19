@@ -1,0 +1,298 @@
+{
+  "scorer": "regex",
+  "n_boot": 500,
+  "n_perm": 1000,
+  "seed": 42,
+  "stage4": {
+    "source": "results/stage4_400img_results.json",
+    "conditions": {
+      "baseline": {
+        "n": 400,
+        "metrics": {
+          "CHAIRs": {
+            "mean": 0.4,
+            "ci_low": 0.355,
+            "ci_high": 0.44631249999999995,
+            "n": 400
+          },
+          "CHAIRi": {
+            "mean": 0.16288392857142855,
+            "ci_low": 0.14069340277777778,
+            "ci_high": 0.18572745535714286,
+            "n": 400
+          }
+        },
+        "aux": {
+          "avg_caption_len_words": 61.06,
+          "avg_object_words": 3.58,
+          "avg_hallucinated_words": 0.6675
+        }
+      },
+      "stage2": {
+        "n": 400,
+        "metrics": {
+          "CHAIRs": {
+            "mean": 0.285,
+            "ci_low": 0.2375,
+            "ci_high": 0.3275,
+            "n": 400
+          },
+          "CHAIRi": {
+            "mean": 0.11040277777777778,
+            "ci_low": 0.09278080357142857,
+            "ci_high": 0.12945136408730157,
+            "n": 400
+          }
+        },
+        "aux": {
+          "avg_caption_len_words": 27.6475,
+          "avg_object_words": 3.0175,
+          "avg_hallucinated_words": 0.41
+        }
+      },
+      "stage3": {
+        "n": 400,
+        "metrics": {
+          "CHAIRs": {
+            "mean": 0.3525,
+            "ci_low": 0.3086875,
+            "ci_high": 0.40131249999999996,
+            "n": 400
+          },
+          "CHAIRi": {
+            "mean": 0.15144642857142857,
+            "ci_low": 0.12694895833333333,
+            "ci_high": 0.17470223214285713,
+            "n": 400
+          }
+        },
+        "aux": {
+          "avg_caption_len_words": 62.055,
+          "avg_object_words": 2.9475,
+          "avg_hallucinated_words": 0.5075
+        }
+      },
+      "stage4": {
+        "n": 400,
+        "metrics": {
+          "CHAIRs": {
+            "mean": 0.255,
+            "ci_low": 0.2175,
+            "ci_high": 0.2963124999999999,
+            "n": 400
+          },
+          "CHAIRi": {
+            "mean": 0.1054156746031746,
+            "ci_low": 0.08483921130952381,
+            "ci_high": 0.12474424603174601,
+            "n": 400
+          }
+        },
+        "aux": {
+          "avg_caption_len_words": 29.6325,
+          "avg_object_words": 2.8,
+          "avg_hallucinated_words": 0.37
+        }
+      }
+    },
+    "paired_deltas_vs_baseline": {
+      "stage2": {
+        "vs": "baseline",
+        "CHAIRs": {
+          "delta": -0.115,
+          "ci_low": -0.1613125,
+          "ci_high": -0.0675,
+          "p_perm": 0.000999000999000999,
+          "n": 400
+        },
+        "CHAIRi": {
+          "delta": -0.052481150793650795,
+          "ci_low": -0.07461550099206349,
+          "ci_high": -0.032206770833333336,
+          "p_perm": 0.000999000999000999,
+          "n": 400
+        }
+      },
+      "stage3": {
+        "vs": "baseline",
+        "CHAIRs": {
+          "delta": -0.0475,
+          "ci_low": -0.0975,
+          "ci_high": 0.0,
+          "p_perm": 0.0999000999000999,
+          "n": 400
+        },
+        "CHAIRi": {
+          "delta": -0.011437499999999998,
+          "ci_low": -0.033841468253968256,
+          "ci_high": 0.011713640873015874,
+          "p_perm": 0.33766233766233766,
+          "n": 400
+        }
+      },
+      "stage4": {
+        "vs": "baseline",
+        "CHAIRs": {
+          "delta": -0.145,
+          "ci_low": -0.19,
+          "ci_high": -0.09868750000000007,
+          "p_perm": 0.000999000999000999,
+          "n": 400
+        },
+        "CHAIRi": {
+          "delta": -0.05746825396825397,
+          "ci_low": -0.0807563492063492,
+          "ci_high": -0.03517271825396826,
+          "p_perm": 0.000999000999000999,
+          "n": 400
+        }
+      }
+    }
+  },
+  "spin": {
+    "budget_64": {
+      "status": "complete",
+      "source_files": {
+        "baseline": "cache/baseline_captions_budget64.json",
+        "spin": "cache/spin_captions_budget64.json"
+      },
+      "conditions": {
+        "baseline": {
+          "n": 400,
+          "metrics": {
+            "CHAIRs": {
+              "mean": 0.285,
+              "ci_low": 0.2425,
+              "ci_high": 0.3275,
+              "n": 400
+            },
+            "CHAIRi": {
+              "mean": 0.10494877344877346,
+              "ci_low": 0.08530765467171716,
+              "ci_high": 0.12438616747835496,
+              "n": 400
+            }
+          },
+          "aux": {
+            "avg_caption_len_words": 49.4725,
+            "avg_object_words": 4.1775,
+            "avg_hallucinated_words": 0.5875
+          }
+        },
+        "spin": {
+          "n": 400,
+          "metrics": {
+            "CHAIRs": {
+              "mean": 0.3125,
+              "ci_low": 0.2661875,
+              "ci_high": 0.3575,
+              "n": 400
+            },
+            "CHAIRi": {
+              "mean": 0.12273809523809524,
+              "ci_low": 0.1006610863095238,
+              "ci_high": 0.14450907738095237,
+              "n": 400
+            }
+          },
+          "aux": {
+            "avg_caption_len_words": 48.76,
+            "avg_object_words": 4.2175,
+            "avg_hallucinated_words": 0.6125
+          }
+        }
+      },
+      "paired_deltas_vs_baseline": {
+        "spin": {
+          "vs": "baseline",
+          "CHAIRs": {
+            "delta": 0.0275,
+            "ci_low": -0.011312499999999996,
+            "ci_high": 0.06,
+            "p_perm": 0.1798201798201798,
+            "n": 400
+          },
+          "CHAIRi": {
+            "delta": 0.01778932178932179,
+            "ci_low": 0.0017629216269841271,
+            "ci_high": 0.03547093479437227,
+            "p_perm": 0.03296703296703297,
+            "n": 400
+          }
+        }
+      }
+    },
+    "budget_128": {
+      "status": "complete",
+      "source_files": {
+        "baseline": "cache/baseline_captions_budget128.json",
+        "spin": "cache/spin_captions_budget128.json"
+      },
+      "conditions": {
+        "baseline": {
+          "n": 400,
+          "metrics": {
+            "CHAIRs": {
+              "mean": 0.515,
+              "ci_low": 0.465,
+              "ci_high": 0.5676249999999998,
+              "n": 400
+            },
+            "CHAIRi": {
+              "mean": 0.1796597019037035,
+              "ci_low": 0.157579021707674,
+              "ci_high": 0.20758493863592545,
+              "n": 400
+            }
+          },
+          "aux": {
+            "avg_caption_len_words": 84.195,
+            "avg_object_words": 6.425,
+            "avg_hallucinated_words": 1.2775
+          }
+        },
+        "spin": {
+          "n": 400,
+          "metrics": {
+            "CHAIRs": {
+              "mean": 0.48,
+              "ci_low": 0.425,
+              "ci_high": 0.5225,
+              "n": 400
+            },
+            "CHAIRi": {
+              "mean": 0.17913139291264293,
+              "ci_low": 0.15507333829365078,
+              "ci_high": 0.2028900628885004,
+              "n": 400
+            }
+          },
+          "aux": {
+            "avg_caption_len_words": 78.1775,
+            "avg_object_words": 5.9625,
+            "avg_hallucinated_words": 1.215
+          }
+        }
+      },
+      "paired_deltas_vs_baseline": {
+        "spin": {
+          "vs": "baseline",
+          "CHAIRs": {
+            "delta": -0.035,
+            "ci_low": -0.085,
+            "ci_high": 0.015,
+            "p_perm": 0.24075924075924077,
+            "n": 400
+          },
+          "CHAIRi": {
+            "delta": -0.0005283089910605399,
+            "ci_low": -0.020669688542666483,
+            "ci_high": 0.018362736519586365,
+            "p_perm": 0.9460539460539461,
+            "n": 400
+          }
+        }
+      }
+    }
+  }
+}

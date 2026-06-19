@@ -1,7 +1,7 @@
 {
   "experiment": "SPIN vs Baseline on Stage 4 eval set (400 images)",
   "manifest": "results/spin_experiment_manifest.json",
-  "prompt": "USER: <image>\\nDescribe this image in detail.\\nASSISTANT:",
+  "prompt": "USER: <image>\nDescribe this image in detail.\nASSISTANT:",
   "spin_config": {
     "start_layer": 0,
     "end_layer": 32,
@@ -9,7 +9,130 @@
     "small_num_mask": 0.08,
     "note": "Paper Table 1 LLaVA-7B greedy CHAIR (r=0.05 suppressed, alpha=0.08)"
   },
-  "budget_80": {"status": "pending", "max_new_tokens": 80},
-  "budget_64": {"status": "pending", "max_new_tokens": 64},
-  "budget_128": {"status": "pending", "max_new_tokens": 128}
+  "budget_80": {
+    "max_new_tokens": 80,
+    "n_paired": 400,
+    "spin_config": {
+      "start_layer": 0,
+      "end_layer": 32,
+      "routed_head": 0.95,
+      "small_num_mask": 0.08,
+      "note": "Paper Table 1 LLaVA-7B greedy CHAIR (r=0.05, alpha=0.08)"
+    },
+    "results": {
+      "Baseline": {
+        "CHAIRs": 0.365,
+        "CHAIRs_CI": [
+          0.3175,
+          0.4125
+        ],
+        "CHAIRi": 0.13820833333333332,
+        "CHAIRi_CI": [
+          0.11554431367243867,
+          0.16005276199494947
+        ],
+        "avg_len": 60.8,
+        "n": 400
+      },
+      "SPIN (Sarkar+25)": {
+        "CHAIRs": 0.3675,
+        "CHAIRs_CI": [
+          0.3225,
+          0.4125
+        ],
+        "CHAIRi": 0.14190954184704185,
+        "CHAIRi_CI": [
+          0.12066916711760461,
+          0.16505452741702742
+        ],
+        "avg_len": 58.425,
+        "n": 400
+      }
+    },
+    "status": "complete"
+  },
+  "budget_64": {
+    "max_new_tokens": 64,
+    "n_paired": 400,
+    "spin_config": {
+      "start_layer": 0,
+      "end_layer": 32,
+      "routed_head": 0.95,
+      "small_num_mask": 0.08,
+      "note": "Paper Table 1 LLaVA-7B greedy CHAIR (r=0.05, alpha=0.08)"
+    },
+    "results": {
+      "Baseline": {
+        "CHAIRs": 0.28,
+        "CHAIRs_CI": [
+          0.2375,
+          0.3225
+        ],
+        "CHAIRi": 0.10655194805194805,
+        "CHAIRi_CI": [
+          0.0862933125901876,
+          0.12658360615079361
+        ],
+        "avg_len": 49.4725,
+        "n": 400
+      },
+      "SPIN (Sarkar+25)": {
+        "CHAIRs": 0.3025,
+        "CHAIRs_CI": [
+          0.26,
+          0.3475
+        ],
+        "CHAIRi": 0.12158829365079367,
+        "CHAIRi_CI": [
+          0.09988040674603173,
+          0.14383271329365077
+        ],
+        "avg_len": 48.76,
+        "n": 400
+      }
+    },
+    "status": "complete"
+  },
+  "budget_128": {
+    "max_new_tokens": 128,
+    "n_paired": 400,
+    "spin_config": {
+      "start_layer": 0,
+      "end_layer": 32,
+      "routed_head": 0.95,
+      "small_num_mask": 0.08,
+      "note": "Paper Table 1 LLaVA-7B greedy CHAIR (r=0.05, alpha=0.08)"
+    },
+    "results": {
+      "Baseline": {
+        "CHAIRs": 0.5125,
+        "CHAIRs_CI": [
+          0.465,
+          0.56
+        ],
+        "CHAIRi": 0.17942142008318476,
+        "CHAIRi_CI": [
+          0.156471673159357,
+          0.20400812996235787
+        ],
+        "avg_len": 84.195,
+        "n": 400
+      },
+      "SPIN (Sarkar+25)": {
+        "CHAIRs": 0.475,
+        "CHAIRs_CI": [
+          0.4275,
+          0.5225
+        ],
+        "CHAIRi": 0.17859279956154958,
+        "CHAIRi_CI": [
+          0.1551951558857809,
+          0.20232100243506493
+        ],
+        "avg_len": 78.1775,
+        "n": 400
+      }
+    },
+    "status": "complete"
+  }
 }

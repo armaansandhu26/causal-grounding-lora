@@ -17,6 +17,8 @@ Required SPIN files:
 ```text
 results/baseline_captions_budget64.json
 results/spin_captions_budget64.json
+results/baseline_captions_budget80.json
+results/spin_captions_budget80.json
 results/baseline_captions_budget128.json
 results/spin_captions_budget128.json
 ```

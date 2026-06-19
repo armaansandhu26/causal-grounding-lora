@@ -477,7 +477,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--caption-dir", type=Path, default=Path("results"))
     parser.add_argument("--out-json", type=Path, default=Path("results/bootstrap_chair_significance.json"))
     parser.add_argument("--out-md", type=Path, default=Path("results/bootstrap_chair_significance.md"))
-    parser.add_argument("--budgets", type=int, nargs="+", default=[64, 128])
+    parser.add_argument("--budgets", type=int, nargs="+", default=[64, 80, 128])
     parser.add_argument("--n-boot", type=int, default=5000)
     parser.add_argument("--n-perm", type=int, default=10000)
     parser.add_argument("--seed", type=int, default=42)

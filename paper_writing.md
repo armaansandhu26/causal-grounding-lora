@@ -150,8 +150,9 @@ Highest priority:
 
 Useful if time remains:
 
-4. Stage 2 fixed-budget runs at 64, 80, and 128.
-5. Two more qualitative examples:
+4. Random-160 LoRA control using `stage2_random_lora_control.ipynb`.
+5. Stage 2 fixed-budget runs at 64, 80, and 128.
+6. Two more qualitative examples:
    - one clean Stage 4 win,
    - one Stage 4 failure case,
    - one case where SPIN or VCD helps but Stage 4 does not.
@@ -212,6 +213,49 @@ Interpretation:
 Suggested text:
 
 > Because shorter captions can mechanically reduce hallucination opportunities, we also report object coverage against COCO annotations. This distinguishes hallucination reduction from simply avoiding object mentions.
+
+## Random-160 LoRA Control
+
+Notebook:
+
+```text
+stage2_random_lora_control.ipynb
+```
+
+Purpose:
+
+> Test whether using the hallucination diagnostic signal to choose intervention data is better than training the same LoRA intervention on a random 160-image control split.
+
+Keep fixed:
+
+- same base model,
+- same LoRA target modules,
+- same hallucination-head gradient mask,
+- same DPO loss,
+- same original Stage 2 held-out eval images.
+
+Change only:
+
+- training image selection: targeted 160 images vs random 160 eligible non-targeted images.
+
+Expected outputs:
+
+```text
+cache/random160_train_imgs.json
+results/stage2_random160_lora_adapter/
+results/stage2_random160_baseline_eval.json
+results/stage2_random160_lora_eval.json
+results/stage2_random160_training_log.json
+```
+
+Paper comparison:
+
+- Baseline
+- Random-160 LoRA
+- Hallucination-focused-160 LoRA
+- Stage 4: hallucination-focused LoRA + grounding
+
+If hallucination-focused LoRA outperforms random-160 LoRA, it directly supports the actionable-interpretability claim that the diagnostic signal helps select useful intervention data.
 
 ## Qualitative Figure
 

@@ -1,0 +1,12 @@
+These files are required by stage2_random_heads_lora_control.ipynb but were not present locally in this repo bundle:
+
+cache/screening_state.pkl
+coco/annotations/instances_val2014.json
+coco/annotations/captions_val2014.json
+coco/val2014_subset/*.jpg
+
+If your Google Drive already has these under:
+
+/content/drive/MyDrive/llava_hallucination_heads/
+
+then you do not need to upload them again.
